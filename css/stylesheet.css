@@ -5,9 +5,81 @@
 html {
     font-family: "Lucida Sans", sans-serif;
 }
-/* Navbar styles */
+body{
+    margin:0;
+}
 
-body {margin: 0;}
+img{
+    width:100%;
+}
+
+/* Header */
+
+.header{
+    background-color:#0b979c;
+    padding:50px;
+    text-align:center;
+}
+
+/* media queries */
+
+@media screen and (max-width: 600px){
+   
+    /* Navbar */
+    ul.topnav {    
+    flex-direction: column;
+    }
+
+
+    /* grid view */
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    /* cards */
+    .card{
+        width: 100%;
+    }
+
+    /* footer */
+    .footer{
+		padding: 35px;
+	}
+	.footer .footer-email{
+		font-size: 18px;
+	}
+	.footer .footer-email{
+		font-size: 12px;
+	}
+	.footer .footer-links{
+		font-size: 14px;
+		padding: 25px 0 20px;
+	}
+	.footer .footer-links a{
+		line-height: 1.8;
+	}
+
+  }
+
+  /* Media query For desktop: */
+
+@media only screen and (min-width: 600px) {
+    
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+  /* Navbar */
 
 ul.topnav {
   list-style-type: none;
@@ -15,8 +87,8 @@ ul.topnav {
   justify-content:center;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   background-color: #333;
+
 }
 
 
@@ -28,16 +100,14 @@ ul.topnav li a {
   text-decoration: none;
 }
 
-ul.topnav li a:hover:not(.active) {background-color: #111;}
-
-ul.topnav li a.active {background-color: #000000;}
-
-ul.topnav li.right {float: right;}
-
-@media screen and (max-width: 600px){
-  ul.topnav li.right, 
-  ul.topnav li {float: none;}
+ul.topnav li a:hover:not(.active) {
+    background-color: #000000;
 }
+
+ul.topnav li a.active {
+    background-color: #000000;
+}
+
 
 /* Middle row layout styles */
 
@@ -64,12 +134,12 @@ ul.topnav li.right {float: right;}
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .menu li:hover {
-    background-color: #0099cc;
+    background-color: #035b79;
 }
 .aside {
     background-color: #33b5e5;
-    max-height: 100%;
-    margin-top: 47px;
+    max-height: 300px;
+    margin-top: 68px;
     padding: 15px;
     color: #000000;
     text-align: center;
@@ -77,33 +147,14 @@ ul.topnav li.right {float: right;}
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-/* Media Query For mobile phones: */
 
-[class*="col-"] {
-    width: 100%;
-}
-
-/* Media query For desktop: */
-
-@media only screen and (min-width: 600px) {
-    
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
-}
 
 /* Grid-card */
 .grid-card{
+    padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    max-height: 300px;
+    overflow-y: scroll;
     transition: 0.3s;
     max-width: 100%;
     border-radius: 5px;
@@ -124,6 +175,7 @@ ul.topnav li.right {float: right;}
 
 /* Card flex styles */
 .card-container{
+    width:100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -137,14 +189,9 @@ ul.topnav li.right {float: right;}
     margin: 20px 30px 20px 30px;
 }
 
-@media screen and (max-width: 600px){
-    .card{
-        width: 100%;
-    }
-}
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 16px 16px 16px 0 rgba(0,0,0,0.2);
 }
 
 img {
@@ -171,13 +218,13 @@ img {
 /* Footer */
 
 .footer{
-	background-color: #292c2f;
+    background-color: #292c2f;
+    position: relative;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
 	text-align: center;
 	font: normal 18px sans-serif;
-
 	padding: 45px;
 	margin-top: 50px;
 }
@@ -197,30 +244,13 @@ img {
 }
 
 .footer .footer-links a{
-	display:inline-block;
 	text-decoration: none;
-	color: inherit;
+	color: #ffffff;
 }
 .footer-name{
     color: white;
 }
 
-
-@media (max-width: 600px) {
-	.footer{
-		padding: 35px;
-	}
-	.footer .footer-email{
-		font-size: 18px;
-	}
-	.footer .footer-email{
-		font-size: 12px;
-	}
-	.footer .footer-links{
-		font-size: 14px;
-		padding: 25px 0 20px;
-	}
-	.footer .footer-links a{
-		line-height: 1.8;
-	}
+#contact-number{
+    color:white;
 }
